@@ -6,4 +6,4 @@
 - name: Make sure Nginx is running
   systemd:
     state: started
-    name: nginx
+    name: nginxs
