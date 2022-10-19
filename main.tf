@@ -1,9 +1,9 @@
 locals {
   vpc_id           = "vpc-8791faec"
   subnet_id        = "subnet-4c72bb31"
-  ssh_user         = "ec2-user"
-  key_name         = "chan"
-  private_key_path = "C:/project5/chan.pem"
+  ssh_user         = "ubuntu"
+  key_name         = "Malar"
+  private_key_path = "C:/project5/Malar.pem"
 }
 
 provider "aws" {
@@ -60,7 +60,7 @@ resource "aws_instance" "nginx" {
       "sudo yum install ansible -y",
       "sudo yum install git -y",
       "git clone https://github.com/Veerah1999/task2-1310.git",
-      "ansible-playbook  -i ${aws_instance.nginx.public_ip}, --private-key ${local.private_key_path} /home/ec2-user/task2-1310/nginx.yaml"
+      "ansible-playbook  -i ${aws_instance.nginx.public_ip}, --private-key ${local.private_key_path} /home/ubuntu/projectrep/nginx.yaml"
     ]
   }
 }
